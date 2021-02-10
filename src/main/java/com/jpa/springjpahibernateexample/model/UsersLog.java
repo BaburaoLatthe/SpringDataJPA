@@ -70,3 +70,6 @@ public class UsersLog {
 	}
 
 }
+
+// References
+// https://thorben-janssen.com/best-practices-many-one-one-many-associations-mappings/

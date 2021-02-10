@@ -36,7 +36,7 @@ public class Users {
 	private Users_Contact usersContact;
 
 	@JsonManagedReference
-	@OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "user")
+	@OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "user", orphanRemoval = true)
 	private List<UsersLog> usersLogs = new ArrayList<>();
 
 	public Users() {
@@ -53,7 +53,8 @@ public class Users {
 		this.usersContact = usersContact;
 		this.usersLogs = usersLogs;
 	}
-	
+
+//	You have to use this utility method to store the results in bi-directional Association mapping
 	public void addUsersLogs(UsersLog usersLogs) {
 		this.usersLogs.add(usersLogs);
 		usersLogs.setUser(this);

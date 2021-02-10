@@ -46,7 +46,7 @@ public class UsersLogsResouce {
 
 		usersRepository.save(users);
 
-		return usersLogsRepository.findByUserId(2);
+		return usersLogsRepository.findByUserId(1);
 
 	}
 }
