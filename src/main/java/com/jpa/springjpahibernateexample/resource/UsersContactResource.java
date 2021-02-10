@@ -57,7 +57,11 @@ public class UsersContactResource {
 		users.setName(name);
 		users.setSalary(10000);
 		users.setTeamName("API Team");
-		users.setUsersLogs(Arrays.asList(usersLog1,usersLog2));
+		
+		List<UsersLog> asList = Arrays.asList(usersLog1,usersLog2);
+//		Set<UsersLog> collect = asList.stream().collect(Collectors.toSet());
+		
+		users.setUsersLogs(asList);
 
 		Users_Contact users_contact = new Users_Contact();
 		users_contact.setPhoneNo("7406317281");
@@ -87,7 +91,10 @@ public class UsersContactResource {
 		users2.setSalary(10000);
 		users2.setTeamName("Development Team");
 		users2.setUsersContact(users_contact2);
-		users2.setUsersLogs(Arrays.asList(usersLog1,usersLog2));
+		
+		List<UsersLog> asList = Arrays.asList(usersLog1,usersLog2);
+//		Set<UsersLog> collect = asList.stream().collect(Collectors.toSet());
+		users2.setUsersLogs(asList);
 		
 		usersRepository.save(users2);
 		

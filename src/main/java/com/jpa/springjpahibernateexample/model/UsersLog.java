@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "users_log")
 public class UsersLog {
@@ -22,18 +24,18 @@ public class UsersLog {
 	@Column(name = "log")
 	private String log;
 
+	@JsonBackReference
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_details")
+	@JoinColumn(name = "usersLogId")
 	private Users user;
 
 	public UsersLog() {
 	}
 
-	public UsersLog(Integer id, String log, Users user) {
+	public UsersLog(Integer id, String log) {
 		super();
 		this.id = id;
 		this.log = log;
-		this.user = user;
 	}
 
 	public Integer getId() {
@@ -57,6 +59,13 @@ public class UsersLog {
 	}
 
 	public void setUser(Users user) {
+		this.user = user;
+	}
+
+	public UsersLog(Integer id, String log, Users user) {
+		super();
+		this.id = id;
+		this.log = log;
 		this.user = user;
 	}
 

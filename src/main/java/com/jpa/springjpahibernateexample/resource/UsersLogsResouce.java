@@ -28,7 +28,7 @@ public class UsersLogsResouce {
 	public List<UsersLog> getAllUsers(@PathVariable(name = "name") String name) {
 		
 		Users_Contact users_contact2 = new Users_Contact();
-		users_contact2.setPhoneNo("7406315900");
+		users_contact2.setPhoneNo("74063175980");
 
 		UsersLog usersLog1 = new UsersLog();
 		usersLog1.setLog("Log message1");
@@ -41,14 +41,12 @@ public class UsersLogsResouce {
 		users.setSalary(10000);
 		users.setTeamName("API Team");
 		users.setUsersContact(users_contact2);
-		
-		List<UsersLog> usersLogs = users.getUsersLogs();
-		usersLogs.add(usersLog1);
-		usersLogs.add(usersLog2);
-		
+		users.addUsersLogs(usersLog1);
+		users.addUsersLogs(usersLog2);
+
 		usersRepository.save(users);
-		
-		return usersLogsRepository.findAll();
+
+		return usersLogsRepository.findByUserId(2);
 
 	}
 }

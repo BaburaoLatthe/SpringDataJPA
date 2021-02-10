@@ -21,7 +21,7 @@ public class Users {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
+	@Column(name = "uid")
 	private Integer id;
 
 	@Column(name = "name")
@@ -36,10 +36,27 @@ public class Users {
 	private Users_Contact usersContact;
 
 	@JsonManagedReference
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	@OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "user")
 	private List<UsersLog> usersLogs = new ArrayList<>();
 
 	public Users() {
+		super();
+	}
+
+	public Users(Integer id, String name, Integer salary, String teamName, Users_Contact usersContact,
+			List<UsersLog> usersLogs) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.teamName = teamName;
+		this.usersContact = usersContact;
+		this.usersLogs = usersLogs;
+	}
+	
+	public void addUsersLogs(UsersLog usersLogs) {
+		this.usersLogs.add(usersLogs);
+		usersLogs.setUser(this);
 	}
 
 	public Integer getId() {
@@ -74,6 +91,10 @@ public class Users {
 		this.teamName = teamName;
 	}
 
+	public Users_Contact getUsersContact() {
+		return usersContact;
+	}
+
 	public void setUsersContact(Users_Contact usersContact) {
 		this.usersContact = usersContact;
 	}
@@ -84,19 +105,6 @@ public class Users {
 
 	public void setUsersLogs(List<UsersLog> usersLogs) {
 		this.usersLogs = usersLogs;
-	}
-
-	public Users_Contact getUsersContact() {
-		return usersContact;
-	}
-
-	public Users(Integer id, String name, Integer salary, String teamName, Users_Contact usersContact) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-		this.teamName = teamName;
-		this.usersContact = usersContact;
 	}
 
 }
