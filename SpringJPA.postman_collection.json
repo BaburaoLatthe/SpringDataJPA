@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "bbad6ad1-fcdf-46bd-a381-0cf0f419152c",
+		"name": "SpringJPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UpdateUserContact- OneToOneMapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/userscontact/updateUserContact/Baburao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"userscontact",
+						"updateUserContact",
+						"Baburao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserContact- ManyToMany - Viewer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/viewer/Ajay/Pachoriya",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"viewer",
+						"Ajay",
+						"Pachoriya"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserContact- ManyToMany - Stream",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/stream/Ajay/Pachoriya",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"stream",
+						"Ajay",
+						"Pachoriya"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserContact- OneToManyMapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/userlogs/getUsers/Baburao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"userlogs",
+						"getUsers",
+						"Baburao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser - OneToOneMapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/userscontact/updateUser/Baburao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"userscontact",
+						"updateUser",
+						"Baburao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers - OneToOneMapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/userscontact/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"userscontact",
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
